@@ -1,0 +1,16 @@
+<h1>My tasks</h1>
+
+<ul class="list-group list-inline">
+  <% @tasks.each do |task| %>
+  <!-- logic check-box if true/false -->
+    <li>
+      <% if task.completed %>
+        <i class="fa fa-check-square-o"></i>
+      <% else %>
+        <i class="fa fa-square-o"></i>
+      <% end %>
+    <!-- task displayed as link to show page tasks_path(task.id) before changed routes-->
+      <%= link_to task.title, task_path(task) %>
+    </li>
+  <%end%>
+</ul>

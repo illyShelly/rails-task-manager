@@ -4,12 +4,17 @@
     <title>RailsTaskManager</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <!-- bootsrap -->
+    <%= stylesheet_link_tag "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" %>
+    <!-- font-awesome -->
+    <%= stylesheet_link_tag "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

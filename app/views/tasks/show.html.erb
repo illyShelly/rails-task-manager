@@ -1,0 +1,25 @@
+<h1><%= @task.title %></h1>
+
+<div class="p-3 mb-2 bg-light text-dark">
+  <%= @task.details %>
+</div>
+
+<div class="p-3 mb-2 bg-white text-dark">
+  <% if @task.completed %>
+    <!-- i tag change style -> write behind that -->
+    <i class="fa fa-check-square-o"></i>This task is completed
+    <!-- <li>This task is completed</li> -->
+  <% else %>
+    <i class="fa fa-square-o"></i>This task is not completed yet
+    <!-- <li>This task is not completed yet</li> -->
+  <% end %>
+</div>
+
+<%= link_to tasks_path do %>
+  <i class="fa fa-history"></i> Back to list
+<% end %>
+
+
+<!-- 1. @task variable show title and detail
+2. if completed -> check box awesome + text
+3. links to all task with -> awesome icon -->
