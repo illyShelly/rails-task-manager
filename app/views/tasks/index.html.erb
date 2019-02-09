@@ -11,6 +11,21 @@
       <% end %>
     <!-- task displayed as link to show page tasks_path(task.id) before changed routes-->
       <%= link_to task.title, task_path(task) %>
+
+      <!-- added trash icon, delete method + question box -->
+      <%= link_to task_path(task),
+        method: :delete,
+        data: { confirm: "Delete #{task.title}?" } do %>
+        <i class="fa fa-trash-o" aria-hidden="true"></i>
+       <% end %>
     </li>
   <%end%>
 </ul>
+
+<hr>
+
+<i class="fa fa-plus" aria-hidden="true"></i> <%= link_to "Add new task", new_task_path %>
+
+<!-- 1. iterate -->
+<!-- 2. if/else complete to show checkbox icon -> by EDIT could change it -->
+<!-- delete icon to link path -->

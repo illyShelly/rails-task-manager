@@ -1,3 +1,9 @@
+<!-- edit task -> form link -->
+<!-- do not need add ...path(@task) -->
+<%= link_to edit_task_path, class: 'pull-right btn btn-default' do %>
+  <i class="fa fa-pencil" aria-hidden="true"></i> Edit this task
+<% end %>
+
 <h1><%= @task.title %></h1>
 
 <div class="p-3 mb-2 bg-light text-dark">
@@ -7,19 +13,22 @@
 <div class="p-3 mb-2 bg-white text-dark">
   <% if @task.completed %>
     <!-- i tag change style -> write behind that -->
-    <i class="fa fa-check-square-o"></i>This task is completed
+    <i class="fa fa-check-square-o"></i> This task is completed
     <!-- <li>This task is completed</li> -->
   <% else %>
-    <i class="fa fa-square-o"></i>This task is not completed yet
+    <i class="fa fa-square-o"></i> This task is not completed yet
     <!-- <li>This task is not completed yet</li> -->
   <% end %>
 </div>
+
+<hr>
 
 <%= link_to tasks_path do %>
   <i class="fa fa-history"></i> Back to list
 <% end %>
 
 
-<!-- 1. @task variable show title and detail
-2. if completed -> check box awesome + text
-3. links to all task with -> awesome icon -->
+<!-- @task variable show title and detail -->
+<!-- 2. if completed -> check box awesome + text -->
+<!-- 3. links to all task with -> awesome icon -->
+<!-- 4. add button to edit task -> to edit form -->

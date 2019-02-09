@@ -1,0 +1,31 @@
+<%= form_for(@task) do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :details %>
+    <%= f.text_field :details, class: 'form-control' %>
+  </div>
+
+  <!-- reference below -->
+  <% unless f.object.new_record? %>
+    <div class="checkbox">
+      <label>
+        <%= f.check_box :completed %> Completed
+      </label>
+    </div>
+<% end %>
+
+  <!-- class has column not = -->
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
+
+<!-- 1. form + bootsrap touch -->
+<!-- 2. link to all task -->
+<!-- 3. after submit -> create/update -> redirect_to ... in controller no link! -->
+<!-- 4. partial view -->
+<!-- 5. check if new_record? -> input check_box -->
+<!-- https://api.rubyonrails.org/classes/ActiveRecord/Persistence.html#method-i-new_record-3F -->
+
+<!-- Returns true if this object hasn't been saved yet – that is, a record for the object doesn't exist in the database yet; otherwise, returns false. -->
